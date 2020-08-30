@@ -14,6 +14,8 @@ namespace Project.WebAPI.App_Start
     using Project.DAL;
     using Project.Repository;
     using Project.Repository.Common;
+    using Project.Service;
+    using Project.Service.Common;
 
     public static class NinjectWebCommon 
     {
@@ -64,7 +66,9 @@ namespace Project.WebAPI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IVehicleDbContext>().To<VehicleDbContext>().InRequestScope();
+            kernel.Bind<IVehicleMakeService>().To<VehicleMakeService>();
+            kernel.Bind<IVehicleDbContext>().To<VehicleDbContext>().InSingletonScope();
+            kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
         }
     }

@@ -103,3 +103,14 @@ C:\Users\mario\source\repos\Project\Project.WebAPI\bin\WebActivatorEx.dll
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.xml
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Web.Common.xml
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Web.Common.WebHost.xml
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Service.Common.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Service.Common.pdb
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\LinFu.DynamicProxy.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.LinFu.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Web.WebApi.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Common.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Common.pdb
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.xml
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.LinFu.xml
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Web.WebApi.xml

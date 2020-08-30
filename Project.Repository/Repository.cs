@@ -11,43 +11,49 @@ namespace Project.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        public IVehicleDbContext context;
-        public DbSet<T> dbSet;
+        private readonly IVehicleDbContext Context;
+        private readonly DbSet<T> DbSet;
 
         public Repository(IVehicleDbContext context)
         {
-            this.context = context;
-            dbSet = context.Set<T>();
+            this.Context = context;
+            DbSet = context.Set<T>();
         }
         public async Task<T> GetById(object id)
         {
-            return await dbSet.FindAsync(id);
+            return await DbSet.FindAsync(id);
         }
 
         public async Task<List<T>> GetAll()
         {
-            return await dbSet.ToListAsync();
+            return await DbSet.ToListAsync();
         }
 
         public void Insert(T entity)
         {
-            dbSet.Add(entity);
+            if (Context.Entry(entity).State != EntityState.Detached)
+            {
+                Context.Entry(entity).State = EntityState.Added;
+            }
+            else
+            {
+                DbSet.Add(entity);
+            }
         }
 
-        public async Task Update(T entity)
+        public void Update(T entity)
         {
-            //context.Entry(entity).State = EntityState.Modified;
-            dbSet.Attach(entity);
-            context.Entry(entity).State = EntityState.Modified;
-
+            if (Context.Entry(entity).State == EntityState.Detached)
+            {
+                DbSet.Attach(entity);
+            }
+            Context.Entry(entity).State = EntityState.Modified;
         }
 
         public async Task Delete(object id)
         {
-            T Entity = await dbSet.FindAsync(id);
-            dbSet.Remove(Entity);
-
-            //context.Entry(Entity).State = EntityState.Deleted;
+            T Entity = await DbSet.FindAsync(id);
+            DbSet.Remove(Entity);
         }
         private bool disposed = false;
        
@@ -57,7 +63,7 @@ namespace Project.Repository
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    Context.Dispose();
                 }
             }
             this.disposed = true;

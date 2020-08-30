@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -14,6 +15,10 @@ namespace Project.DAL
 
         DbSet<T> Set<T>() where T : class;
 
+        Task<int> SaveChangesAsync();
 
+        DbSet<VehicleMake> VehicleMakes { get; set; }
+
+        DbSet<VehicleModel> VehicleModels { get; set; }
     }
 }

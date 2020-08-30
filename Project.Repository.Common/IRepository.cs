@@ -10,7 +10,7 @@ namespace Project.Repository.Common
     {
         Task<T> GetById(object id);
         Task<List<T>> GetAll();
-        Task Update(T entity);
+        void Update(T entity);
         void Insert(T entity);
         Task Delete(object id);
     }

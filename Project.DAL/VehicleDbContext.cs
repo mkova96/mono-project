@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
@@ -22,16 +23,12 @@ namespace Project.DAL
 
         }
 
+        public DbSet<VehicleMake> VehicleMakes { get; set; }
+
+        public DbSet<VehicleModel> VehicleModels { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
-            .Where(type => !String.IsNullOrEmpty(type.Namespace))
-            .Where(type => type.BaseType != null && type.BaseType.IsGenericType && type.BaseType.GetGenericTypeDefinition() == typeof(EntityTypeConfiguration<>));
-            foreach (var type in typesToRegister)
-            {
-                dynamic configurationInstance = Activator.CreateInstance(type);
-                modelBuilder.Configurations.Add(configurationInstance);
-            }
             base.OnModelCreating(modelBuilder);
         }
     }

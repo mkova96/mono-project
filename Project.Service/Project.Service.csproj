@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleMakeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
@@ -56,6 +56,10 @@
     <ProjectReference Include="..\Project.Repository\Project.Repository.csproj">
       <Project>{CF540829-C2D5-42B0-8422-1D75CB5E7532}</Project>
       <Name>Project.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Service.Common\Project.Service.Common.csproj">
+      <Project>{D01A0CDC-6851-4487-9B52-4CDDEF4D4DE6}</Project>
+      <Name>Project.Service.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

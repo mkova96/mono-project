@@ -1,0 +1,11 @@
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.Service.Common.dll
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.Service.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.DAL.dll
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\EntityFramework.dll
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.DAL.pdb
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.DAL.dll.config
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\EntityFramework.xml
+C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.csprojAssemblyReference.cache
+C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.csproj.CopyComplete
+C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.dll
+C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.pdb

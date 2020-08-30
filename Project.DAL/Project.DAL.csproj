@@ -51,12 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\VehicleMake.cs" />
+    <Compile Include="Entities\VehicleModel.cs" />
     <Compile Include="IVehicleDbContext.cs" />
-    <Compile Include="Mapping\EmployeeMap.cs" />
-    <Compile Include="Migrations\202008291425537_ali.cs" />
-    <Compile Include="Migrations\202008291425537_ali.designer.cs">
-      <DependentUpon>202008291425537_ali.cs</DependentUpon>
+    <Compile Include="Migrations\202008301639120_initial.cs" />
+    <Compile Include="Migrations\202008301639120_initial.designer.cs">
+      <DependentUpon>202008301639120_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +67,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008291425537_ali.resx">
-      <DependentUpon>202008291425537_ali.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008301639120_initial.resx">
+      <DependentUpon>202008301639120_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
