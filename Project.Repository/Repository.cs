@@ -45,7 +45,12 @@ namespace Project.Repository
         public void Update(T entity)
         {
 
+            if (Context.Entry(entity).State == EntityState.Detached)
+            {
+                DbSet.Attach(entity);
+            }
             Context.Entry(entity).State = EntityState.Modified;
+
         }
 
         public async Task Delete(object id)

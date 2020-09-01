@@ -6,10 +6,12 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using AutoMapper;
 using Project.Model;
 using Project.Model.Common;
 using Project.Service;
 using Project.Service.Common;
+using Project.WebAPI.Models;
 
 namespace Project.WebAPI.Controllers
 {
@@ -25,16 +27,16 @@ namespace Project.WebAPI.Controllers
 
         [HttpGet]
         [Route("vehiclemodel")]
-        public async Task<List<IVehicleModel>> GetAsync()
+        public async Task<List<VehicleModelModel>> GetAsync()
         {
-            return await Service.GetAll();
+            return Mapper.Map<List<VehicleModelModel>>(await Service.GetAll());
         }
 
         [HttpGet]
         [Route("vehiclemodel/{id}")]
         public async Task<HttpResponseMessage> GetById(int id)
         {
-            var model = await Service.GetById(id);
+            var model = Mapper.Map<VehicleModelModel>(await Service.GetById(id));
 
             if (model == null)
             {
@@ -64,11 +66,11 @@ namespace Project.WebAPI.Controllers
         {
             try
             {
-                if (model.Abrv == "" || model.Name == "" || model == null || model.MakeId == 0)
+                if (model.Abrv == "" || model.Name == "" || model.MakeId == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                await Service.Create(model);
+                await Service.Create(Mapper.Map<VehicleModel>(model));
                 return Request.CreateResponse(HttpStatusCode.Created);
 
             }
@@ -86,11 +88,11 @@ namespace Project.WebAPI.Controllers
             model.Id = id;
             try
             {
-                if (model.Abrv == "" || model.Name == "" || model == null || model.MakeId == 0)
+                if (model.Abrv == "" || model.Name == "" || model.MakeId == 0)
                 {
                     throw new ArgumentNullException();
                 }
-                await Service.Update(model);
+                await Service.Update(Mapper.Map<VehicleModel>(model));
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception e)

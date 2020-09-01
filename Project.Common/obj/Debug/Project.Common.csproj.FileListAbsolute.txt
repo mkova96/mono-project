@@ -2,4 +2,3 @@ C:\Users\mario\source\repos\Project\Project.Common\bin\Debug\Project.Common.dll
 C:\Users\mario\source\repos\Project\Project.Common\bin\Debug\Project.Common.pdb
 C:\Users\mario\source\repos\Project\Project.Common\obj\Debug\Project.Common.dll
 C:\Users\mario\source\repos\Project\Project.Common\obj\Debug\Project.Common.pdb
-C:\Users\mario\source\repos\Project\Project.Common\obj\Debug\Project.Common.csprojAssemblyReference.cache

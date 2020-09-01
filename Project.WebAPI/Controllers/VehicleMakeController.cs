@@ -5,6 +5,7 @@ using Project.Model.Common;
 using Project.Repository.Common;
 using Project.Service;
 using Project.Service.Common;
+using Project.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,17 +31,16 @@ namespace Project.WebAPI.Controllers
 
         [HttpGet]
         [Route("vehiclemake")]
-        public async Task<List<IVehicleMake>> GetAsync()
+        public async Task<List<VehicleMakeModel>> GetAsync()
         {
-            return await Service.GetAll();
+            return Mapper.Map<List<VehicleMakeModel>>(await Service.GetAll());
         }
 
         [HttpGet]
         [Route("vehiclemake/{id}")]
         public async Task<HttpResponseMessage> GetById(int id)
         {
-            var make = await Service.GetById(id);
-
+            var make = Mapper.Map<VehicleMakeModel>(await Service.GetById(id));
             if (make ==null )
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
@@ -65,15 +65,15 @@ namespace Project.WebAPI.Controllers
 
         [HttpPost]
         [Route("vehiclemake/create")]
-        public async Task<HttpResponseMessage> Create(VehicleMake make)
+        public async Task<HttpResponseMessage> Create(VehicleMakeModel make)
         {
             try
             {
-                if (make.Abrv == "" || make.Name== "" || make == null)
+                if (make.Abrv == "" || make.Name== "")
                 {
                     throw new ArgumentNullException();
                 }
-                await Service.Create(make);
+                await Service.Create(Mapper.Map<VehicleMake>(make));
                 return Request.CreateResponse(HttpStatusCode.Created);
 
             }
@@ -86,16 +86,16 @@ namespace Project.WebAPI.Controllers
 
         [HttpPut]
         [Route("vehiclemake/{id}")]
-        public async Task<HttpResponseMessage> Update(VehicleMake make, int id)
+        public async Task<HttpResponseMessage> Update(VehicleMakeModel make, int id)
         {
             make.Id = id;
             try
             {
-                if ( make.Abrv=="" || make.Name == "" || make == null)
+                if ( make.Abrv=="" || make.Name == "")
                 {
                     throw new ArgumentNullException();
                 }
-                await Service.Update(make);
+                await Service.Update(Mapper.Map<VehicleMake>(make));
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception e)
