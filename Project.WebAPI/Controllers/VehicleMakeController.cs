@@ -1,59 +1,108 @@
-﻿using Project.DAL.Entities;
+﻿using AutoMapper;
+using Project.DAL.Entities;
+using Project.Model;
+using Project.Model.Common;
 using Project.Repository.Common;
 using Project.Service;
 using Project.Service.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
 namespace Project.WebAPI.Controllers
 {
+    [RoutePrefix("api")]
     public class VehicleMakeController : ApiController
     {
         protected IVehicleMakeService Service { get; private set; }
+        //protected VehicleMakeService Service { get; private set; }
 
-          public VehicleMakeController(IVehicleMakeService Service)
+        public VehicleMakeController(IVehicleMakeService Service)
         {
             this.Service = Service;
         }
 
+
         [HttpGet]
         [Route("vehiclemake")]
-        public async Task<List<VehicleMake>> GetAsync()
+        public async Task<List<IVehicleMake>> GetAsync()
         {
             return await Service.GetAll();
         }
 
         [HttpGet]
         [Route("vehiclemake/{id}")]
-        public async Task<VehicleMake> GetById(int id)
+        public async Task<HttpResponseMessage> GetById(int id)
         {
-            return await Service.GetById(id);
+            var make = await Service.GetById(id);
+
+            if (make ==null )
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK,make);
         }
 
         [HttpDelete]
         [Route("vehiclemake/{id}")]
-        public async Task Delete(int id)
+        public async Task<HttpResponseMessage> Delete(int id)
         {
-            await Service.Delete(id);
+            try
+            {
+                await Service.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
         }
 
         [HttpPost]
         [Route("vehiclemake/create")]
-        public async Task<int> Create(VehicleMake make)
+        public async Task<HttpResponseMessage> Create(VehicleMake make)
         {
-            return await Service.Create(make);
+            try
+            {
+                if (make.Abrv == "" || make.Name== "" || make == null)
+                {
+                    throw new ArgumentNullException();
+                }
+                await Service.Create(make);
+                return Request.CreateResponse(HttpStatusCode.Created);
+
+            }
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+
         }
 
         [HttpPut]
         [Route("vehiclemake/{id}")]
-        public async Task<VehicleMake> Update(VehicleMake make, int id)
+        public async Task<HttpResponseMessage> Update(VehicleMake make, int id)
         {
             make.Id = id;
-            return await Service.Update(make);
+            try
+            {
+                if ( make.Abrv=="" || make.Name == "" || make == null)
+                {
+                    throw new ArgumentNullException();
+                }
+                await Service.Update(make);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
         }
     }
 }

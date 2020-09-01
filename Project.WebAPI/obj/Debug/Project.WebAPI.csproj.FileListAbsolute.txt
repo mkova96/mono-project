@@ -114,3 +114,12 @@ C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Common.pdb
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.xml
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Extensions.Interception.LinFu.xml
 C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Ninject.Web.WebApi.xml
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\AutoMapper.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Model.Common.pdb
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\AutoMapper.pdb
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\AutoMapper.xml
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Model.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\Project.Model.pdb
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\AutoMapper.Net4.dll
+C:\Users\mario\source\repos\Project\Project.WebAPI\bin\AutoMapper.Net4.pdb

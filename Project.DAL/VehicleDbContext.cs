@@ -20,16 +20,17 @@ namespace Project.DAL
 
         public VehicleDbContext(): base("StringDBContext")
         {
-
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
-        public DbSet<VehicleMake> VehicleMakes { get; set; }
+        public DbSet<VehicleMakeEntity> VehicleMakes { get; set; }
 
-        public DbSet<VehicleModel> VehicleModels { get; set; }
+        public DbSet<VehicleModelEntity> VehicleModels { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            base.Configuration.ProxyCreationEnabled = false;
         }
     }
 }

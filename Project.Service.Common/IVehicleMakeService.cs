@@ -1,4 +1,5 @@
 ﻿using Project.DAL.Entities;
+using Project.Model.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Project.Service.Common
 {
     public interface IVehicleMakeService
     {
-        Task<VehicleMake> GetById(int id);
-        Task<List<VehicleMake>> GetAll();
-        Task<int> Create(VehicleMake make);
-        Task<VehicleMake> Update(VehicleMake make);
+        Task<IVehicleMake> GetById(int id);
+        Task<List<IVehicleMake>> GetAll();
+        Task Create(IVehicleMake make);
+        Task Update(IVehicleMake make);
         Task Delete(int id);
     }
 }

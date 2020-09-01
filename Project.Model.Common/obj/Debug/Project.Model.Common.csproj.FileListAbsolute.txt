@@ -1,0 +1,4 @@
+C:\Users\mario\source\repos\Project\Project.Model.Common\bin\Debug\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.Model.Common\bin\Debug\Project.Model.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Model.Common\obj\Debug\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.Model.Common\obj\Debug\Project.Model.Common.pdb

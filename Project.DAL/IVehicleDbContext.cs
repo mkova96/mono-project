@@ -17,8 +17,8 @@ namespace Project.DAL
 
         Task<int> SaveChangesAsync();
 
-        DbSet<VehicleMake> VehicleMakes { get; set; }
+        DbSet<VehicleMakeEntity> VehicleMakes { get; set; }
 
-        DbSet<VehicleModel> VehicleModels { get; set; }
+        DbSet<VehicleModelEntity> VehicleModels { get; set; }
     }
 }

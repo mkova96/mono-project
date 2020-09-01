@@ -13,7 +13,6 @@ namespace Project.Repository
         private bool disposed = false;
         private Dictionary<string, object> repositories;
         private IVehicleDbContext context;
-
         public UnitOfWork(IVehicleDbContext context)
         {
             this.context = context;

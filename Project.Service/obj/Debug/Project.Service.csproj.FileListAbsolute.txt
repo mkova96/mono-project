@@ -16,3 +16,14 @@ C:\Users\mario\source\repos\Project\Project.Service\obj\Debug\Project.Service.dl
 C:\Users\mario\source\repos\Project\Project.Service\obj\Debug\Project.Service.pdb
 C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Service.Common.dll
 C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Service.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\AutoMapper.Net4.dll
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\AutoMapper.dll
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Model.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\AutoMapper.pdb
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\AutoMapper.xml
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\AutoMapper.Net4.pdb
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Ninject.dll
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Model.dll
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Ninject.xml
+C:\Users\mario\source\repos\Project\Project.Service\bin\Debug\Project.Model.pdb

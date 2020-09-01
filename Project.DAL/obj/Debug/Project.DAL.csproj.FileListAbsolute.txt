@@ -10,4 +10,5 @@ C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.dll
 C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.pdb
 C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.Migrations.initial.resources
 C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.csproj.GenerateResource.cache
+C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.Migrations.second.resources
 C:\Users\mario\source\repos\Project\Project.DAL\obj\Debug\Project.DAL.csprojAssemblyReference.cache

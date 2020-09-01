@@ -51,12 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\VehicleMake.cs" />
-    <Compile Include="Entities\VehicleModel.cs" />
+    <Compile Include="Entities\VehicleMakeEntity.cs" />
+    <Compile Include="Entities\VehicleModelEntity.cs" />
     <Compile Include="IVehicleDbContext.cs" />
     <Compile Include="Migrations\202008301639120_initial.cs" />
     <Compile Include="Migrations\202008301639120_initial.designer.cs">
       <DependentUpon>202008301639120_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008311350398_second.cs" />
+    <Compile Include="Migrations\202008311350398_second.designer.cs">
+      <DependentUpon>202008311350398_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008301639120_initial.resx">
       <DependentUpon>202008301639120_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008311350398_second.resx">
+      <DependentUpon>202008311350398_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

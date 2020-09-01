@@ -1,4 +1,7 @@
-﻿using Project.DAL.Entities;
+﻿using AutoMapper;
+using Project.DAL.Entities;
+using Project.Model;
+using Project.Model.Common;
 using Project.Repository;
 using Project.Repository.Common;
 using Project.Service.Common;
@@ -13,38 +16,34 @@ namespace Project.Service
     public class VehicleMakeService : IVehicleMakeService
     {
         private readonly IUnitOfWork UnitOfWork;
-        private readonly IRepository<VehicleMake> VehicleMakeRepository;
+        private readonly IRepository<VehicleMakeEntity> VehicleMakeRepository;
 
         public VehicleMakeService(IUnitOfWork unitOfWork)
         {
             this.UnitOfWork = unitOfWork;
-            VehicleMakeRepository = unitOfWork.Repository<VehicleMake>();
+            VehicleMakeRepository = unitOfWork.Repository<VehicleMakeEntity>();
         }
 
-        public async Task<VehicleMake> GetById(int id)
+        public async Task<IVehicleMake> GetById(int id)
         {
-            return await VehicleMakeRepository.GetById(id);
+            return Mapper.Map<VehicleMake>(await VehicleMakeRepository.GetById(id));
         }
 
-        public async Task<List<VehicleMake>> GetAll()
+        public async Task<List<IVehicleMake>> GetAll()
         {
-            return await VehicleMakeRepository.GetAll();
+            return new List<IVehicleMake>(Mapper.Map<List<VehicleMake>>(await VehicleMakeRepository.GetAll()));
         }
 
-        public async Task<int> Create(VehicleMake make)
+        public async Task Create(IVehicleMake make)
         {
-            VehicleMakeRepository.Insert(make);
+            VehicleMakeRepository.Insert(Mapper.Map<VehicleMakeEntity>(make));
             await UnitOfWork.Save();
-
-            return make.Id;
         }
 
-        public async Task<VehicleMake> Update(VehicleMake make)
+        public async Task Update(IVehicleMake make)
         {
-            VehicleMakeRepository.Update(make);
+            VehicleMakeRepository.Update(Mapper.Map<VehicleMakeEntity>(make));
             await UnitOfWork.Save();
-
-            return make;
         }
 
         public async Task Delete(int id)

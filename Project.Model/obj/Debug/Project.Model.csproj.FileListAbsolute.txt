@@ -1,0 +1,8 @@
+C:\Users\mario\source\repos\Project\Project.Model\bin\Debug\Project.Model.dll
+C:\Users\mario\source\repos\Project\Project.Model\bin\Debug\Project.Model.pdb
+C:\Users\mario\source\repos\Project\Project.Model\bin\Debug\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.Model\bin\Debug\Project.Model.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Model\obj\Debug\Project.Model.csprojAssemblyReference.cache
+C:\Users\mario\source\repos\Project\Project.Model\obj\Debug\Project.Model.csproj.CopyComplete
+C:\Users\mario\source\repos\Project\Project.Model\obj\Debug\Project.Model.dll
+C:\Users\mario\source\repos\Project\Project.Model\obj\Debug\Project.Model.pdb

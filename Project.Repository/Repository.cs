@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,10 +44,7 @@ namespace Project.Repository
 
         public void Update(T entity)
         {
-            if (Context.Entry(entity).State == EntityState.Detached)
-            {
-                DbSet.Attach(entity);
-            }
+
             Context.Entry(entity).State = EntityState.Modified;
         }
 

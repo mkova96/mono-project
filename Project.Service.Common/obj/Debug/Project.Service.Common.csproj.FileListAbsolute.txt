@@ -9,3 +9,5 @@ C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Ser
 C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.csproj.CopyComplete
 C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.dll
 C:\Users\mario\source\repos\Project\Project.Service.Common\obj\Debug\Project.Service.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.Model.Common.dll
+C:\Users\mario\source\repos\Project\Project.Service.Common\bin\Debug\Project.Model.Common.pdb
