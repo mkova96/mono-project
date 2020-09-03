@@ -1,4 +1,16 @@
+C:\Users\mario\source\repos\Project\Project.Repository.Common\obj\Debug\Project.Repository.Common.csprojAssemblyReference.cache
 C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\Project.Repository.Common.dll
 C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\Project.Repository.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\Project.Common.dll
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\Project.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Repository.Common\obj\Debug\Project.Repository.Common.csproj.CopyComplete
 C:\Users\mario\source\repos\Project\Project.Repository.Common\obj\Debug\Project.Repository.Common.dll
 C:\Users\mario\source\repos\Project\Project.Repository.Common\obj\Debug\Project.Repository.Common.pdb
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\PagedList.dll
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\PagedList.EntityFramework.dll
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\EntityFramework.dll
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\Project.Common.dll.config
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\PagedList.xml
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\PagedList.EntityFramework.pdb
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\PagedList.EntityFramework.xml
+C:\Users\mario\source\repos\Project\Project.Repository.Common\bin\Debug\EntityFramework.xml

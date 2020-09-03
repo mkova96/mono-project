@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using AutoMapper;
+using Project.Common;
+using Project.DAL.Entities;
 using Project.Model;
 using Project.Model.Common;
 using Project.Service;
@@ -25,11 +28,47 @@ namespace Project.WebAPI.Controllers
             this.Service = Service;
         }
 
+        //vehiclemodel?pagenumber=1&pagesize=5&orderby=name&asc=true&filter=d
         [HttpGet]
         [Route("vehiclemodel")]
-        public async Task<List<VehicleModelModel>> GetAsync()
+        public async Task<List<VehicleModelModel>> GetAsync([FromUri] UriParameters p)
         {
-            return Mapper.Map<List<VehicleModelModel>>(await Service.GetAll());
+            //default values
+            Expression<Func<VehicleModelEntity, object>> OrderBy = null;
+            Expression<Func<VehicleModelEntity, bool>> Filter = null;
+            bool Asc = true;
+            int PageNumber = 1;
+            int PageSize = 5;
+
+            if (!p.Filter.Equals(""))
+            {
+                Filter = (x => x.Name.Contains(p.Filter) || x.Abrv.Contains(p.Filter));
+            }
+
+            if (p.Asc.ToLower().Equals("false"))
+            {
+                Asc = false;
+            }
+
+            if (p.OrderBy.ToLower().Equals("abrv"))
+            {
+                OrderBy = y => y.Abrv;
+            }
+            else
+            {
+                OrderBy = y => y.Name;
+            }
+
+            if (p.PageNumber != 0)
+            {
+                PageNumber = p.PageNumber;
+            }
+            if (p.PageSize != 0)
+            {
+                PageSize = p.PageSize;
+            }
+
+            return Mapper.Map<List<VehicleModelModel>>(await Service.Get(new GenericParameters<VehicleModelEntity>(OrderBy, Asc, Filter, PageNumber, PageSize)));
         }
 
         [HttpGet]

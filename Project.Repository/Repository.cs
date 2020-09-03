@@ -1,4 +1,7 @@
-﻿using Project.DAL;
+﻿using PagedList;
+using PagedList.EntityFramework;
+using Project.Common;
+using Project.DAL;
 using Project.Repository.Common;
 using System;
 using System.Collections.Generic;
@@ -25,9 +28,12 @@ namespace Project.Repository
             return await DbSet.FindAsync(id);
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<IEnumerable<T>> Get(GenericParameters<T> p)
         {
-            return await DbSet.ToListAsync();
+            IQueryable<T> Db = DbSet;
+            Db = Filter.WhereFilter(Db,p.Filter);
+            Db = Sort.OrderBySort(Db,p.OrderBy,p.Asc);
+            return await Page.DoPagingAsync(Db,p.PageNumber, p.PageSize);
         }
 
         public void Insert(T entity)

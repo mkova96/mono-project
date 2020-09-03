@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Project.Common;
 using Project.DAL.Entities;
 using Project.Model;
 using Project.Model.Common;
@@ -8,6 +9,7 @@ using Project.Service.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,9 +31,9 @@ namespace Project.Service
             return Mapper.Map<VehicleMake>(await VehicleMakeRepository.GetById(id));
         }
 
-        public async Task<List<IVehicleMake>> GetAll()
+        public async Task<IEnumerable<IVehicleMake>> Get(GenericParameters<VehicleMakeEntity> o)
         {
-            return new List<IVehicleMake>(Mapper.Map<List<VehicleMake>>(await VehicleMakeRepository.GetAll()));
+            return new List<IVehicleMake>(Mapper.Map<List<VehicleMake>>(await VehicleMakeRepository.Get(o)));
         }
 
         public async Task Create(IVehicleMake make)

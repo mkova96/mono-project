@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Project.Common;
 using Project.DAL.Entities;
 using Project.Model;
 using Project.Model.Common;
@@ -28,9 +29,9 @@ namespace Project.Service
             return Mapper.Map<VehicleModel>(await VehicleModelRepository.GetById(id));
         }
 
-        public async Task<List<IVehicleModel>> GetAll()
+        public async Task<List<IVehicleModel>> Get(GenericParameters<VehicleModelEntity> o)
         {
-            return new List<IVehicleModel>(Mapper.Map<List<VehicleModel>>(await VehicleModelRepository.GetAll()));
+            return new List<IVehicleModel>(Mapper.Map<List<VehicleModel>>(await VehicleModelRepository.Get(o)));
         }
 
         public async Task Create(IVehicleModel model)

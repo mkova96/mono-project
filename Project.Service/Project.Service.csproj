@@ -56,6 +56,10 @@
     <Compile Include="VehicleModelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Project.Common\Project.Common.csproj">
+      <Project>{D39AD092-7AC3-454A-8186-46BC6E17AD53}</Project>
+      <Name>Project.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
       <Project>{C9A4EBA4-AAD2-41B4-A284-1EEC41BBFD92}</Project>
       <Name>Project.DAL</Name>

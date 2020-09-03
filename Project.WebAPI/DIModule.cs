@@ -1,4 +1,7 @@
-﻿using Project.Model;
+﻿using Project.Common;
+using Project.DAL.Entities;
+using Project.Model;
+using Project.Model.Common;
 using Project.WebAPI.Models;
 using System;
 using System.Collections.Generic;

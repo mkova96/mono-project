@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Project.Common\Project.Common.csproj">
+      <Project>{D39AD092-7AC3-454A-8186-46BC6E17AD53}</Project>
+      <Name>Project.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
       <Project>{C9A4EBA4-AAD2-41B4-A284-1EEC41BBFD92}</Project>
       <Name>Project.DAL</Name>
@@ -53,6 +57,10 @@
     <ProjectReference Include="..\Project.Model.Common\Project.Model.Common.csproj">
       <Project>{61EC5748-D50B-4C9C-B924-3A9A2EA82B9D}</Project>
       <Name>Project.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Model\Project.Model.csproj">
+      <Project>{BAD46BDA-4842-47AD-8D23-095E0C33484F}</Project>
+      <Name>Project.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
